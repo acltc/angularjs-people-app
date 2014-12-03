@@ -7,7 +7,11 @@
     <label>Details:</label>
     <input type="text" ng-model="newPersonDetails">
     <button ng-click="addPerson(newPersonName, newPersonDetails)">Save person</button>
-    <div ng-repeat="person in people">
+    <br>
+    <br>
+    <label>Filter:</label>
+    <input ng-model="nameFilter">
+    <div ng-repeat="person in people | filter: {name: nameFilter}">
       <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>
