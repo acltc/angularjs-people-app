@@ -11,7 +11,11 @@
     <br>
     <label>Filter:</label>
     <input ng-model="nameFilter">
-    <div ng-repeat="person in people | filter: {name: nameFilter}">
+    <div id="order-buttons">
+      <button ng-click="changeOrderAttribute('name')">Order by name</button>
+      <button ng-click="changeOrderAttribute('details')">Order by details</button>
+    </div>
+    <div ng-repeat="person in people | filter: {name: nameFilter} | orderBy:orderByAttribute:descending">
       <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>
