@@ -10,7 +10,10 @@
     <br>
     <br>
     <label>Filter:</label>
-    <input ng-model="nameFilter">
+    <datalist id="names">
+      <option ng-repeat="person in people" value="{{person.name}}">{{ person.name }}</option>
+    </datalist>
+    <input list="names" ng-model="nameFilter">
     <div id="order-buttons">
       <button ng-click="changeOrderAttribute('name')">Order by name</button>
       <button ng-click="changeOrderAttribute('details')">Order by details</button>
