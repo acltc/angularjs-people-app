@@ -3,6 +3,11 @@
 
   angular.module("app").controller("peopleCtrl", function($scope, $http){
     
+    $scope.changeOrder = function(attribute) {
+      $scope.orderAttribute = attribute;
+      $scope.sortDirection = !$scope.sortDirection;
+    };
+
     $http.get("/api/v1/people.json").then(function (response) {
       $scope.people = response.data;
     });
