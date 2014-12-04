@@ -10,8 +10,14 @@
     <br>
     <button ng-click="changeOrder('name')">Sort By Name</button>
     <button ng-click="changeOrder('details')">Sort By Details</button>
+
+    <datalist id="names">
+      <option ng-repeat="person in people" value="{{ person.name }}">{{ person.name }}</option>
+    </datalist>
+
     <label>Search:</label>
-    <input ng-model="nameFilter">
+    <input list="names" ng-model="nameFilter">
+
     <div ng-repeat="person in people | filter: { name: nameFilter } | orderBy:orderAttribute:sortDirection" >
       <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
