@@ -3,6 +3,13 @@
 
   angular.module("app").controller("peopleCtrl", function($scope, $http){
 
+    $scope.autocompleteName = function(text) {
+      $http.get("/api/v1/people/search.json?name=" + text).then(function (response) {
+        console.log(response);
+        $scope.autocompletePeople = response.data;
+      });
+    };
+
     $scope.orderByAttribute = "name";
     $scope.descending = true;
 

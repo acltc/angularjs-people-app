@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :people, only: [:index, :create]
+      get 'people/search' => 'people#search'
     end
   end
 

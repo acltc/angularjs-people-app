@@ -7,6 +7,10 @@ class Api::V1::PeopleController < ApplicationController
     @person = Person.create(person_params)
   end
 
+  def search
+    @people = Person.where("name like ?", "%#{params[:name]}%")
+  end
+
   private
 
   def person_params

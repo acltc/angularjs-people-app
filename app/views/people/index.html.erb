@@ -11,9 +11,9 @@
     <br>
     <label>Filter:</label>
     <datalist id="names">
-      <option ng-repeat="person in people" value="{{person.name}}">{{ person.name }}</option>
+      <option ng-repeat="person in autocompletePeople" value="{{person.name}}">{{ person.name }}</option>
     </datalist>
-    <input list="names" ng-model="nameFilter">
+    <input list="names" ng-model="nameFilter" ng-keyup="autocompleteName(nameFilter)">
     <div id="order-buttons">
       <button ng-click="changeOrderAttribute('name')">Order by name</button>
       <button ng-click="changeOrderAttribute('details')">Order by details</button>
