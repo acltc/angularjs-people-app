@@ -12,7 +12,7 @@
       $http.post('/api/v1/people.json', {person: newPerson}).then(function(response) {
         $scope.people.push(newPerson);
       }, function (error) {
-        $scope.error = error.statusText;
+        $scope.errors = error.data.errors;
       });
     }
 
