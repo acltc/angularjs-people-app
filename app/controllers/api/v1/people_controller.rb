@@ -4,7 +4,11 @@ class Api::V1::PeopleController < ApplicationController
   end
 
   def create
-    @person = Person.create(person_params)
+    @person = Person.new(person_params)
+    if @person.save
+    else
+      render json: { errors: @person.errors.full_messages }, status: 422
+    end
   end
 
   private
