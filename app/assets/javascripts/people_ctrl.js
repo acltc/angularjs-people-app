@@ -23,6 +23,23 @@
     $scope.toggleVisible = function(person) {
       person.detailsVisible = !person.detailsVisible;
     };
+
+    $scope.addNewPerson = function(name, details) {
+      var newPerson = {
+        name: name,
+        details: details
+      }
+      $scope.people.push(newPerson);
+    }
+
+    $scope.numberOfPeople = function() {
+      return $scope.people.length;
+    }
+
+    $scope.deletePerson = function(person) {
+      console.log("Delete");
+      $scope.people.splice(person, 1);
+    }
   });
 
 }());

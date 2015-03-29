@@ -2,8 +2,17 @@
 <div ng-app="app">
   <div ng-controller="peopleCtrl">
     <div ng-repeat="person in people">
-      <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
+      <h3 ng-click="toggleVisible(person)">{{ person.name }} </h3>
+      <span ng-click="deletePerson(person)">Delete</span>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>
+
+    <div id="form">
+      Name: <input ng-model="newPersonName">
+      Details: <input ng-model="newPersonDetails">
+      <button ng-click="addNewPerson(newPersonName, newPersonDetails)">Add Person</button>
+    </div>
+
+    <div id="counter">Total: {{ numberOfPeople() }}</div>
   </div>
 </div>
