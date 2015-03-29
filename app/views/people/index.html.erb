@@ -1,6 +1,22 @@
 <h1>Interesting People</h1>
 <div ng-app="app">
   <div ng-controller="peopleCtrl">
-    
+
+    <div ng-repeat="person in people">
+      <h2 ng-click="toggleDetailsVisible(person)">{{ person.name }}</h2>
+      <h4 ng-if="person.detailsVisible">{{ person.details }}</h4>
+      <a href="#" ng-click="deletePerson(person)">Delete</a>
+    </div>
+
+    <div id="form">
+      Name:<input ng-model="newName">
+      Details<input ng-model="newDetails">
+      <button ng-click="addNewPerson(newName, newDetails)">Add Person</button>
+    </div>  
+
+    <div id="counter">
+      Total count of people: {{ totalCount() }}
+    </div>
+
   </div>
 </div>

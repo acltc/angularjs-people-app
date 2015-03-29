@@ -2,7 +2,9 @@
   "use strict";
 
   angular.module("app").controller("peopleCtrl", function($scope){
-    $scope.people = [{
+
+    $scope.people = [
+    {
       name: "Bob",
       details: "Small batch salvia Marfa chillwave delectus, odio forage art party laborum street art minim fixie locavore hoodie mollit. Delectus flexitarian yr laborum, master cleanse Intelligentsia Shoreditch wayfarers 3 wolf moon eiusmod American Apparel. Lo-fi anim Banksy raw denim before they sold out fixie cardigan +1, ethnic Kickstarter. Sustainable velit tote bag, master cleanse lomo Wes Anderson exercitation cliche. Laborum cred keffiyeh skateboard, gluten-free duis esse nulla proident butcher +1 deserunt hoodie four loko. Anim Pitchfork ad trust fund, aliqua nostrud pop-up quinoa disrupt cupidatat sriracha Helvetica minim. Semiotics nesciunt tousled, synth Tumblr cornhole sriracha hella.",
       detailsVisible: false
@@ -20,6 +22,28 @@
       detailsVisible: false
     }];
 
+    $scope.toggleDetailsVisible = function(person) {
+
+      person.detailsVisible = !person.detailsVisible;
+
+    };
+
+    $scope.addNewPerson = function(name, details) {
+      var person = {
+        name: name,
+        details: details,
+        detailsVisible: false
+      };
+      $scope.people.push(person);
+    }
+
+    $scope.totalCount = function() {
+      return $scope.people.length;
+    };
+
+    $scope.deletePerson = function(person) {
+      $scope.people.splice($scope.people.indexOf(person), 1);
+    };
     
   });
 
