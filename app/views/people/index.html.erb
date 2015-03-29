@@ -8,11 +8,12 @@
     </div>
 
     <div id="form">
+      <h4>Add new person:</h4>
       Name: <input ng-model="newPersonName">
       Details: <input ng-model="newPersonDetails">
       <button ng-click="addNewPerson(newPersonName, newPersonDetails)">Add Person</button>
     </div>
 
-    <div id="counter">Total: {{ numberOfPeople() }}</div>
+    <div id="counter"><h4>Total number of people:</h4>{{ numberOfPeople() }}</div>
   </div>
 </div>

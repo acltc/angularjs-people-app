@@ -37,7 +37,6 @@
     }
 
     $scope.deletePerson = function(person) {
-      console.log("Delete");
       $scope.people.splice(person, 1);
     }
   });
