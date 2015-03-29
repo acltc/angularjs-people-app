@@ -20,9 +20,7 @@
       detailsVisible: false
     }];
 
-    $scope.toggleVisible = function(person) {
-      person.detailsVisible = !person.detailsVisible;
-    };
+    
   });
 
 }());
