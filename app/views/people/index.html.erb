@@ -1,6 +1,6 @@
 <h1>Interesting People</h1>
 <div ng-app="app">
-  <div ng-controller="peopleCtrl">
+  <div ng-controller="peopleCtrl" ng-init="setup()">
 
     <div ng-repeat="person in people">
       <h2 ng-click="toggleDetailsVisible(person)">{{ person.name }}</h2>
