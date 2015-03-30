@@ -5,7 +5,7 @@
 
     $scope.setup = function() {
       $http.get("/api/v1/people.json").then(function (response) {
-        $scope.people = response.data;
+        $scope.people = response.data["people"];
       });
     };
     
