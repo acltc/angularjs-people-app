@@ -6,5 +6,11 @@
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>
 
+    <div id="form">
+      Name: <input ng-model="newPersonName">
+      Details: <input ng-model="newPersonDetails">
+      <button ng-click="addPerson(newPersonName, newPersonDetails)">Add Person</button>
+    </div>
+
   </div>
 </div>
