@@ -33,6 +33,10 @@
       person.detailsVisible = !person.detailsVisible;
     };
 
+    $scope.changeOrderAttribute = function(attribute) {
+      $scope.orderAttribute = attribute;
+    };
+
     window.scope = $scope;
   });
 
