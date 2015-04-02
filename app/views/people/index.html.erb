@@ -8,7 +8,7 @@
     <label>Filter By Name:</label>
 
     <datalist id="names">
-      <option>Bob</option>
+      <option ng-repeat="person in people">{{ person.name }}</option>
     </datalist>
 
     <input ng-model="nameFilter" list="names">
