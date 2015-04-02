@@ -7,7 +7,7 @@
     </div>
     <label>Filter By Name:</label>
     <input ng-model="nameFilter">
-    <div ng-repeat="person in people | filter: { name: nameFilter } | orderBy:orderAttribute:true">
+    <div ng-repeat="person in people | filter: { name: nameFilter } | orderBy:orderAttribute:descending">
       <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>

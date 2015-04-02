@@ -35,6 +35,7 @@
 
     $scope.changeOrderAttribute = function(attribute) {
       $scope.orderAttribute = attribute;
+      $scope.descending = !$scope.descending;
     };
 
     window.scope = $scope;
