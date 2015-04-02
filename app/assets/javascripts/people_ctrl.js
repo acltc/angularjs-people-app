@@ -18,13 +18,14 @@
 
       $http.post('/api/v1/people.json', person).then(function(response) {
           $scope.people.push(person);
+          $scope.newPersonName = "";
+          $scope.newPersonDetails = "";
         }, function (error) {
-
+          $scope.errors = error.data.errors;
         });
 
 
-      $scope.newPersonName = "";
-      $scope.newPersonDetails = "";
+      
     };
 
     $scope.toggleVisible = function(person) {

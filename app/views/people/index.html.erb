@@ -7,6 +7,9 @@
     </div>
 
     <div id="form">
+      <div id="errors">
+        <p ng-repeat="error in errors">{{ error }}</p>
+      </div>
       Name: <input ng-model="newPersonName">
       Details: <input ng-model="newPersonDetails">
       <button ng-click="addPerson(newPersonName, newPersonDetails)">Add Person</button>
