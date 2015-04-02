@@ -1,7 +1,9 @@
 <h1>Interesting People</h1>
 <div ng-app="app">
   <div ng-controller="peopleCtrl" ng-init="fetchData()">
-    <div ng-repeat="person in people">
+    <label>Filter By Name:</label>
+    <input ng-model="nameFilter">
+    <div ng-repeat="person in people | filter: { name: nameFilter }">
       <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>
