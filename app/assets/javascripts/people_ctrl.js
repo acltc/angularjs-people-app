@@ -20,6 +20,7 @@
           $scope.people.push(person);
           $scope.newPersonName = "";
           $scope.newPersonDetails = "";
+          $scope.errors = null;
         }, function (error) {
           $scope.errors = error.data.errors;
         });
