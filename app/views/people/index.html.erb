@@ -5,7 +5,10 @@
     <label>Filter by name</label>
     <input ng-model="nameFilter">
 
-    <div ng-repeat="person in people | filter: {name: nameFilter}">
+    <button ng-click="changeOrder('name')">Order by name</button>
+    <button ng-click="changeOrder('details')">Order by details</button>
+
+    <div ng-repeat="person in people | filter: {name: nameFilter} | orderBy: orderByAttribute:descending">
       <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>

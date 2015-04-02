@@ -33,6 +33,13 @@
       person.detailsVisible = !person.detailsVisible;
     };
 
+    $scope.descending = true;
+
+    $scope.changeOrder = function(attribute) {
+      $scope.orderByAttribute = attribute;
+      $scope.descending = !$scope.descending;
+    };
+
     window.scope = $scope;
   });
 
