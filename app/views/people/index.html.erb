@@ -6,7 +6,12 @@
     <button ng-click="changeOrderAttribute('details')">Order by details</button>
     </div>
     <label>Filter By Name:</label>
-    <input ng-model="nameFilter">
+
+    <datalist id="names">
+      <option>Bob</option>
+    </datalist>
+
+    <input ng-model="nameFilter" list="names">
     <div ng-repeat="person in people | filter: { name: nameFilter } | orderBy:orderAttribute:descending">
       <h3 ng-click="toggleVisible(person)">{{ person.name }}</h3>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
