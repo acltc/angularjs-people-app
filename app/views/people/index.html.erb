@@ -3,7 +3,11 @@
   <div ng-controller="peopleCtrl" ng-init="fetchData()">
 
     <label>Filter by name</label>
-    <input ng-model="nameFilter">
+    <input ng-model="nameFilter" list="names">
+
+    <datalist id="names">
+      <option ng-repeat="person in people">{{ person.name }}</option>
+    </datalist>
 
     <button ng-click="changeOrder('name')">Order by name</button>
     <button ng-click="changeOrder('details')">Order by details</button>
