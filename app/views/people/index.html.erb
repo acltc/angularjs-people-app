@@ -3,7 +3,7 @@
   <div ng-controller="peopleCtrl">
     <div ng-repeat="person in people">
       <h3 ng-click="toggleVisible(person)">{{ person.name }} </h3>
-      <span ng-click="deletePerson(person)">Delete</span>
+      <span ng-click="deletePerson($index)">Delete</span>
       <p ng-if="person.detailsVisible">{{ person.details }}</p>
     </div>
 
